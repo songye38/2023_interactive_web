@@ -68,6 +68,12 @@ body {
     }
     
 }
+@keyframes soaking {
+    to {
+        transform: translateY((-250px)) scale(0);
+    }
+    
+}
 
 #planet_2 {
     animation-name : rotation;
@@ -123,4 +129,10 @@ body {
 
 #alien_hand-R,#alien_hand-L {
     animation : shakingUpAndDown 1s infinite;
+}
+
+#number-0-soaking {
+    animation : soaking 2s;
+    transform-box: fill-box;
+    transform-origin: center;
 }
