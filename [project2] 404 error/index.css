@@ -6,6 +6,121 @@ body {
     height:100vh;
     overflow:hidden;
     background-color: blueviolet;
+}
+
+@keyframes rotation {
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+@keyframes shrinkAndGrow {
+    0%{
+        transform: scale(0);
+    }
+    25%{
+        transform: scale(0.5);
+    }
+    50% {
+        transform: scale(0);
+    }
+    75%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0);
+    }  
+}
+
+@keyframes expandHotizontal {
+    from{
+        transform: scaleX(0);
+    }
+    to{
+        transform: scaleX(1);
+    }
+    
+}
+
+@keyframes appearFrom {
+    from {
+        transform: translateY(1000px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+@keyframes shakingUpAndDown {
+    from {
+        transform: translateY(0);
+    }
+    25%{
+        transform: translateY(5px);
+    }
+    50%{
+        transform: translateY(-5px);
+    }
+    75%{
+        transform: translateY(5px);
+    }
+    to{
+        transform: translateY(0);
+    }
+    
+}
+
+#planet_2 {
+    animation-name : rotation;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+#planet_1 {
+    animation-name : rotation;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+
+}
+#star_1 {
+    animation : shrinkAndGrow 4s infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+#star_2 {
+    animation : shrinkAndGrow 2s infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+#star_3 {
+    animation : shrinkAndGrow 12s infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+#star_4 {
+    animation : shrinkAndGrow 8s infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+#star_6 {
+    animation : shrinkAndGrow 15s infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+#UFO-beam {
+    animation: expandHotizontal 3.5s infinite;
+    transform-box: fill-box;
+    transform-origin: center;
 
 }
 
+#number-0{
+    animation : appearFrom 3s;
+}
+
+#alien_hand-R,#alien_hand-L {
+    animation : shakingUpAndDown 1s infinite;
+}
