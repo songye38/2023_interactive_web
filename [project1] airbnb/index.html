@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <img id ='logo' src="./img/comp_0685990.png" alt="fast campus logo">
+        <div id="little-search">
+            <button class="little-search_button">언제든지</button><span class="divider"></span>
+            <button class="little-search_button">언제든 일주일</button><span class="divider"></span>
+            <button class="little-search_button">게스트 추가</button><span class="divider"></span>
+            <div id="magnifying-glass-wrapper">
+                <img id ='magnifying-glass-icon' src="./img/Magnifying_glass_icon.svg" alt="확대 아이콘">
+            </div>
+        </div>
+    </header>
+</body>
+<script>
+    document.querySelectorAll('.category-button').forEach(button=>{
+        button.addEventListener('click',event=>{
+            document.querySelector('#active-category-button').removeAttribute('id')
+            button.setAttribute('id','active-category-button')
+        })
+    })
+</script>
+</html>

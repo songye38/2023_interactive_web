@@ -1,0 +1,41 @@
+#logo {
+    height: 64px;
+    cursor : pointer;
+}
+header {
+    display: flex;
+}
+#little-search{
+    display: flex;
+    align-items: center;
+    border: 1px solid #DDDDDD;
+    border-radius:40px;
+}
+.little-search_button {
+    padding : 0px 16px;
+    white-space: nowrap;
+}
+
+button{
+    background-color: transparent;
+    border:none;
+}
+.divider {
+    flex-basis: 1px;
+    background-color: #DDDDDD;
+    height:24px;
+
+}
+#magnifying-glass-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:50%;
+    flex-basis: 32px;
+    flex-shrink: 0;
+    height:32px;
+    background-color: #ff38cf;
+}
+#magnifying-glass-icon{
+    width:12px;
+}
