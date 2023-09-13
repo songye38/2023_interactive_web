@@ -123,3 +123,17 @@ body {
 .list-item#on::before{
   background-image: url('./icons/light_house.png');
 }
+
+#panel1-img {
+  overflow: hidden;
+  margin-bottom: 500px;
+  position: relative;
+  height: 320px;
+}
+
+#flying-santa-image {
+  position: absolute;
+  right: -80px;
+  height: 310px;
+  transform: translate(80px, -13px) rotate(23deg);
+}
