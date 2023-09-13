@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>interactive web</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="cursor">
+        <div class="cursor-default">
+            <span class="cursor_default_inner">
+            </span>
+        </div>
+        <div class="cursor_trace">
+            <span class="cursor_trace_inner">
+            </span>
+        </div>
+    </div>
+    
+</body>
+<script>
+    document.addEventListener('mousemove',(e)=>{
+        const cursorDefaultInner = document.querySelector('.cursor_default_inner')
+        const cursorTracetInner = document.querySelector('.cursor_trace_inner')
+        cursorDefaultInner.style.top = e.clientY + "px"
+        cursorDefaultInner.style.left = e.clientX + "px"
+
+        cursorTracetInner.style.top = e.clientY + "px"
+        cursorTracetInner.style.left = e.clientX + "px"
+
+    })
+    const cursor = document.querySelector('.cursor')
+    document.addEventListener('mousedown',()=>{
+        console.log("mouse down")
+        cursor.classList.add('cursor--active')
+    })
+    document.addEventListener('mouseup',()=>{
+        console.log("mouse up")
+        cursor.classList.remove('cursor--active')
+    })
+
+    function createRipple(e){
+        let ripple = document.createElement("span")
+        ripple.classList.add("ripple")
+        cursor.appendChild(ripple)
+
+        ripple.style.top = (e.clientY - ripple.clientHeight/2) + "px"
+        ripple.style.left = (e.clientX - ripple.clientWidth/2) + "px"
+
+        ripple.addEventListener('animationend',()=>{
+            cursor.removeChild(ripple)
+        })
+        
+
+    }
+    document.addEventListener('click',(e)=>{
+        createRipple(e)
+    })
+</script>
+</html>
